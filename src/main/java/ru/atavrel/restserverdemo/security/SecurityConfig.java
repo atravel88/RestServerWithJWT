@@ -42,7 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 authorizeRequests()
                 // auth for registration and login
                 .requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
-                .antMatchers(HttpMethod.POST, "/api/login").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/login/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/registration/users/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/registration/users/**").permitAll()
                 // auth for admin

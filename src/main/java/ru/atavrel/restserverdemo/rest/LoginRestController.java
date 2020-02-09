@@ -51,7 +51,7 @@ public class LoginRestController {
         this.jwtUtil = jwtUtil;
     }
 
-    //POST: http://localhost:8075/login
+    //POST: http://localhost:8075/api/login
     @PostMapping
     public ResponseEntity<AuthenticationResponseDTO> createAuthenticationToken(@RequestBody AuthenticationRequestDTO requestDTO) throws Exception {
         try {
