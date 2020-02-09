@@ -71,7 +71,7 @@ class AdminRestController {
         if (userFromDB == null) {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
-        userService.add(user);
+        userService.update(user);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

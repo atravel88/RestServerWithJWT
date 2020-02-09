@@ -53,6 +53,15 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
+    public void update(User entity) {
+        if (entity.getRoles().isEmpty()) {
+            entity.getRoles().add(new Role(1L, "USER"));
+        }
+        usersRepository.save(entity);
+    }
+
+    @Transactional
+    @Override
     public void deleteById(Long id) {
         usersRepository.deleteById(id);
     }
